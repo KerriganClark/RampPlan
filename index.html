@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kerrigan's 30 / 60 / 90 Day Ramp Plan – Presales SE · Cyera</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #050816;
+      --card-bg: #0f172a;
+      --card-alt-bg: #020617;
+      --accent: #22c55e;
+      --accent-soft: rgba(34, 197, 94, 0.2);
+      --accent-muted: #4ade80;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border-subtle: #1f2937;
+      --danger: #f97373;
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.5);
+      --radius-lg: 16px;
+      --radius-sm: 10px;
+      --transition-fast: 0.18s ease-out;
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #1f2937 0, #020617 45%, #000 100%);
+      color: var(--text-main);
+      font-family: var(--font-main);
+      font-size: 16px;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      padding: 24px 12px;
+    }
+
+    .app-shell {
+      width: 100%;
+      max-width: 1180px;
+      background: radial-gradient(circle at 0 0, #1d283a 0, #020617 55%, #020617 100%);
+      border-radius: 24px;
+      padding: 24px 24px 22px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.28);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .app-shell::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 10% -20%, rgba(56, 189, 248, 0.12), transparent 50%),
+                  radial-gradient(circle at 90% 120%, rgba(45, 212, 191, 0.12), transparent 55%);
+      pointer-events: none;
+      opacity: 0.85;
+      mix-blend-mode: screen;
+    }
+
+    .app-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 22px;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .title-block {
+      max-width: 620px;
+    }
+
+    .owner-tag {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent-muted);
+      margin-bottom: 4px;
+      opacity: 0.9;
+    }
+
+    h1 {
+      font-size: clamp(24px, 2.7vw, 30px);
+      margin: 0 0 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      letter-spacing: 0.02em;
+    }
+
+    h1 span.pill {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: var(--text-muted);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .subtitle {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .meta-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .badge {
+      font-size: 13px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      backdrop-filter: blur(12px);
+      background: rgba(15, 23, 42, 0.8);
+      color: var(--text-muted);
+    }
+
+    .badge strong {
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 12px rgba(34, 197, 94, 0.7);
+    }
+
+    .summary-panel {
+      min-width: 260px;
+      max-width: 340px;
+      background: radial-gradient(circle at 0 0, rgba(45, 212, 191, 0.22), transparent 60%),
+                  radial-gradient(circle at 120% 50%, rgba(56, 189, 248, 0.2), transparent 55%),
+                  linear-gradient(to bottom right, #020617, #020617);
+      border-radius: 18px;
+      padding: 13px 15px 14px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      box-shadow: 0 8px 26px rgba(15, 23, 42, 0.9);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .summary-panel::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 70% 0, rgba(15, 23, 42, 0.1), transparent 70%);
+      pointer-events: none;
+    }
+
+    .summary-panel h2 {
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin: 0 0 8px;
+      color: #e5e7eb;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .summary-panel h2 span {
+      flex-shrink: 0;
+      width: 16px;
+      height: 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      color: var(--text-muted);
+    }
+
+    .summary-panel p {
+      margin: 0 0 10px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text-main);
+    }
+
+    .summary-panel ul {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 13px;
+      color: var(--text-main);
+    }
+
+    .summary-panel li {
+      margin-bottom: 5px;
+    }
+
+    .summary-panel li span {
+      color: var(--text-muted);
+    }
+
+    .settings-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .toggle-group {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .toggle {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      width: 50px;
+      height: 24px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      cursor: pointer;
+      transition: background var(--transition-fast), border-color var(--transition-fast);
+    }
+
+    .toggle-thumb {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 0, #f9fafb, #d1fae5);
+      box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.6), 0 3px 10px rgba(15, 23, 42, 0.85);
+      transform: translateX(2px);
+      transition: transform var(--transition-fast);
+    }
+
+    .toggle.on {
+      background: radial-gradient(circle at 0 0, rgba(45, 212, 191, 0.6), #064e3b);
+      border-color: rgba(74, 222, 128, 0.9);
+    }
+
+    .toggle.on .toggle-thumb {
+      transform: translateX(24px);
+    }
+
+    .pill-switch {
+      display: inline-flex;
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      padding: 3px;
+      gap: 3px;
+    }
+
+    .pill-switch button {
+      border: none;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 13px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background var(--transition-fast), color var(--transition-fast),
+        box-shadow var(--transition-fast), transform var(--transition-fast);
+    }
+
+    .pill-switch button.active {
+      background: radial-gradient(circle at 0 0, rgba(45, 212, 191, 0.5), #064e3b);
+      color: #ecfeff;
+      box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.9), 0 8px 18px rgba(15, 23, 42, 0.8);
+      transform: translateY(-0.5px);
+    }
+
+    .pill-switch button span.dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: rgba(148, 163, 184, 0.9);
+    }
+
+    .pill-switch button.active span.dot {
+      background: #a7f3d0;
+      box-shadow: 0 0 8px rgba(45, 212, 191, 0.9);
+    }
+
+    main {
+      background: radial-gradient(circle at 0 0, rgba(15, 23, 42, 0.8), #020617);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 12px;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6);
+    }
+
+    .layout {
+      display: flex;
+      flex-direction: row;
+      gap: 12px;
+    }
+
+    .phases-sidebar {
+      width: 210px;
+      border-right: 1px solid rgba(31, 41, 55, 0.9);
+      padding-right: 12px;
+    }
+
+    .phases-sidebar h3 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+      margin: 0 0 6px;
+    }
+
+    .phase-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .phase-pill {
+      border-radius: 14px;
+      padding: 8px 10px;
+      background: linear-gradient(to right, rgba(15, 23, 42, 0.95), #020617);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      color: var(--text-muted);
+      font-size: 13px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      transition: background var(--transition-fast), border-color var(--transition-fast),
+        transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .phase-pill:hover {
+      border-color: rgba(148, 163, 184, 0.9);
+      transform: translateY(-0.5px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    .phase-pill.active {
+      background: radial-gradient(circle at 0 0, rgba(34, 197, 94, 0.6), #064e3b);
+      border-color: rgba(74, 222, 128, 0.95);
+      color: #ecfeff;
+      box-shadow: 0 8px 20px rgba(22, 163, 74, 0.8);
+    }
+
+    .phase-pill-title {
+      font-weight: 500;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .phase-pill-title span.days {
+      font-size: 12px;
+      opacity: 0.85;
+    }
+
+    .phase-pill-subtitle {
+      font-size: 12px;
+      opacity: 0.9;
+    }
+
+    .phase-pill-metric {
+      font-size: 12px;
+      color: #bbf7d0;
+      margin-top: 2px;
+    }
+
+    .phase-pill-metric span {
+      color: #22c55e;
+    }
+
+    .phase-pill-metric span.empty {
+      color: var(--text-muted);
+    }
+
+    .content-area {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .content-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+
+    .content-header-left h2 {
+      margin: 0 0 4px;
+      font-size: 19px;
+      letter-spacing: 0.02em;
+    }
+
+    .content-header-left .phase-range {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .content-header-left .phase-range strong {
+      color: var(--accent-muted);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .pill {
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      color: var(--text-muted);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .progress-card {
+      min-width: 240px;
+      max-width: 260px;
+      background: linear-gradient(to bottom right, #020617, #020617);
+      border-radius: 16px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      padding: 10px 12px 11px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 13px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.85);
+    }
+
+    .progress-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .progress-label {
+      font-weight: 500;
+      color: var(--text-main);
+    }
+
+    .progress-meta {
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+
+    .progress-bar-outer {
+      width: 100%;
+      height: 10px;
+      border-radius: 999px;
+      background: #020617;
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      overflow: hidden;
+    }
+
+    .progress-bar-inner {
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(to right, #22c55e, #a3e635);
+      width: 0%;
+      transition: width 0.25s ease-out;
+      box-shadow: 0 0 10px rgba(74, 222, 128, 0.9);
+    }
+
+    .progress-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .progress-badge {
+      padding: 3px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: rgba(15, 23, 42, 0.9);
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .progress-badge span {
+      color: #bbf7d0;
+    }
+
+    .danger-link {
+      color: #fecaca;
+      cursor: pointer;
+      text-decoration: underline;
+      font-size: 12px;
+    }
+
+    .columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+    }
+
+    .column-card {
+      background: linear-gradient(to bottom right, var(--card-bg), var(--card-alt-bg));
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(31, 41, 55, 0.95);
+      padding: 10px 11px 8px;
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.8);
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .column-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: baseline;
+      margin-bottom: 6px;
+    }
+
+    .column-title {
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .column-subtitle {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .task {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .task input[type="checkbox"] {
+      margin-top: 3px;
+      width: 16px;
+      height: 16px;
+      accent-color: #22c55e;
+      cursor: pointer;
+    }
+
+    .task-label {
+      font-size: 13px;
+      line-height: 1.5;
+      cursor: pointer;
+    }
+
+    .task-label span.tag {
+      font-size: 11px;
+      padding: 2px 6px;
+      border-radius: 999px;
+      margin-left: 5px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      color: var(--text-muted);
+    }
+
+    .task-label span.tag.rel {
+      border-color: rgba(96, 165, 250, 0.9);
+      color: #bfdbfe;
+    }
+
+    .task-label span.tag.enable {
+      border-color: rgba(52, 211, 153, 0.9);
+      color: #a7f3d0;
+    }
+
+    .task-label span.tag.pipeline {
+      border-color: rgba(249, 115, 22, 0.9);
+      color: #fed7aa;
+    }
+
+    .task-label span.tag.partner {
+      border-color: rgba(244, 114, 182, 0.9);
+      color: #f9a8d4;
+    }
+
+    .task-label span.tag.interview {
+      border-style: dashed;
+      border-color: rgba(148, 163, 184, 0.9);
+      color: #e5e7eb;
+    }
+
+    .task-label small {
+      display: block;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    @media (max-width: 860px) {
+      .layout {
+        flex-direction: column;
+      }
+
+      .phases-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid rgba(31, 41, 55, 0.9);
+        padding-right: 0;
+        padding-bottom: 8px;
+        margin-bottom: 10px;
+      }
+
+      .phase-list {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 4px;
+      }
+
+      .phase-pill {
+        min-width: 200px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 10px;
+      }
+
+      .app-shell {
+        padding: 16px 12px 14px;
+        border-radius: 18px;
+      }
+
+      header {
+        flex-direction: column;
+      }
+
+      .summary-panel {
+        width: 100%;
+      }
+
+      .content-header {
+        flex-direction: column;
+      }
+
+      .progress-card {
+        width: 100%;
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <div class="app-inner">
+      <header>
+        <div class="title-block">
+          <div class="owner-tag">Kerrigan's</div>
+          <h1>
+            30 / 60 / 90 Day Ramp Plan
+            <span class="pill">Presales Systems Engineer · Cyera</span>
+          </h1>
+          <p class="subtitle">
+            Structured plan to reach full productivity in your region: from onboarding and
+            alignment, to co-owning opportunities, to independently driving technical wins
+            with AEs and channel partners.
+          </p>
+          <div class="meta-badges">
+            <span class="badge">
+              <span class="badge-dot"></span>
+              <strong>For Regional Sales Director</strong> · clear ramp & impact milestones
+            </span>
+            <span class="badge">
+              <strong>Focus</strong> · <span>Time-to-productivity · Pipeline impact · Partner leverage</span>
+            </span>
+            <span class="badge">
+              <strong>Context</strong> · <span>AI-native data & DSPM, cloud-first security</span>
+            </span>
+          </div>
+        </div>
+        <aside class="summary-panel">
+          <h2>
+            <span>SE</span>
+            Ramp outcomes (Day 90)
+          </h2>
+          <p>
+            By day <strong>90</strong>, I’m operating as a fully ramped presales SE for your region:
+          </p>
+          <ul>
+            <li><strong>Owning full technical cycles</strong> for mid-segment opportunities (discovery, demo, POV, close).</li>
+            <li><strong>Trusted partner to core AEs</strong>, plugged into weekly pipeline and forecast rhythms.</li>
+            <li><strong>Activated channel ecosystem</strong>, re-engaging my existing relationships where it benefits Cyera.</li>
+            <li><strong>Specialized</strong> in 1–2 Cyera value pillars aligned to our territory (e.g., cloud DSPM, AI data access).</li>
+          </ul>
+        </aside>
+      </header>
+
+      <div class="settings-bar">
+        <div class="pill-switch" id="layoutSwitch">
+          <button data-layout="phase" class="active">
+            <span class="dot"></span> Phase view
+          </button>
+          <button data-layout="all">
+            <span class="dot"></span> All 90 days
+          </button>
+        </div>
+        <div class="toggle-group">
+          <span>Interview mode (hide checkmarks, keep story)</span>
+          <div class="toggle" id="interviewToggle">
+            <div class="toggle-thumb"></div>
+          </div>
+        </div>
+      </div>
+
+      <main>
+        <div class="layout">
+          <aside class="phases-sidebar">
+            <h3>Phases</h3>
+            <div class="phase-list" id="phaseList"></div>
+          </aside>
+          <section class="content-area">
+            <div class="content-header">
+              <div class="content-header-left">
+                <h2 id="phaseTitle">Day 0–30 · Learn & Connect</h2>
+                <div class="phase-range" id="phaseRange">
+                  Focus: <strong>Accelerated onboarding, alignment, and product fundamentals.</strong>
+                </div>
+                <div class="pill-row">
+                  <span class="pill">Win trust with manager & AEs quickly</span>
+                  <span class="pill">Shadow calls and demos to match the team’s motion</span>
+                  <span class="pill">Build first demo environment tailored to the region</span>
+                </div>
+              </div>
+              <div class="progress-card">
+                <div class="progress-row">
+                  <div>
+                    <div class="progress-label">Phase completion</div>
+                    <div class="progress-meta" id="progressMeta">
+                      0 of 0 tasks complete
+                    </div>
+                  </div>
+                  <div style="font-size: 24px;">✅</div>
+                </div>
+                <div class="progress-bar-outer">
+                  <div class="progress-bar-inner" id="progressBar"></div>
+                </div>
+                <div class="progress-badges" id="progressBadges"></div>
+                <div style="margin-top: 6px; font-size: 12px; color: var(--text-muted);">
+                  Local to your browser. Reset if you want to rehearse from “day 0”:
+                  <span class="danger-link" id="resetPlan">Clear progress</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="columns" id="columns"></div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    const plan = [
+      {
+        id: "30",
+        label: "Day 0–30",
+        title: "Day 0–30 · Learn & Connect",
+        range: "Focus: Accelerated onboarding, alignment, and product fundamentals.",
+        goal: "Lay a strong foundation: relationships, product knowledge, and a clear success plan.",
+        metrics: [
+          "Completed onboarding + core training",
+          "Have a mentor and weekly sync with manager",
+          "Shadowed ≥5 customer calls / demos",
+          "Able to deliver a guided Cyera demo with AE"
+        ],
+        categories: [
+          {
+            title: "Relationships & Internal Alignment",
+            subtitle: "Build trust with your core team and align to regional expectations.",
+            tasks: [
+              {
+                id: "30_meet_manager",
+                label:
+                  "Meet 1:1 with your manager to align on expectations, territory, ICP, and 30/60/90 success metrics.",
+                tags: ["rel", "interview"],
+                helper:
+                  "Clarify what success looks like by phase and how you’ll be measured in the region."
+              },
+              {
+                id: "30_meet_ae_team",
+                label:
+                  "Schedule 1:1s with each AE, SDR, and fellow SE supporting your territory to understand their styles and needs.",
+                tags: ["rel"],
+                helper:
+                  "Ask how they like SEs to support discovery, demos, POVs, and proposal stages."
+              },
+              {
+                id: "30_find_mentor",
+                label:
+                  "Identify and ask a high-performing SE or SA to be your mentor for your first 6–12 months.",
+                tags: ["rel"],
+                helper:
+                  "Propose a 30-minute bi-weekly sync focused on deals, demos, and internal navigation."
+              },
+              {
+                id: "30_meet_crossfunc",
+                label:
+                  "Meet key cross-functional partners (Product, Customer Success, Support, Channel, RevOps).",
+                tags: ["rel"],
+                helper:
+                  "Capture who owns POV frameworks, reference architectures, and technical win stories."
+              }
+            ]
+          },
+          {
+            title: "Product & Platform Ramp (Cyera)",
+            subtitle: "Understand how Cyera secures data across cloud, SaaS, on‑prem, and AI.",
+            tasks: [
+              {
+                id: "30_product_overview",
+                label:
+                  "Complete official Cyera product overviews, intro trainings, and any DSPM / data security certifications offered.",
+                tags: ["enable"],
+                helper:
+                  "Focus on value pillars: data discovery & classification, risk insights, and automated remediation."
+              },
+              {
+                id: "30_architecture",
+                label:
+                  "Learn Cyera reference architecture: how it connects to cloud providers, SaaS, on‑prem data stores, SIEM/IAM/DLP, and ticketing.",
+                tags: ["enable"],
+                helper:
+                  "Be able to whiteboard the architecture and data flows in under 3 minutes."
+              },
+              {
+                id: "30_use_cases",
+                label:
+                  "Document top 3–5 core use cases for your segment (e.g., cloud DSPM, SaaS data exposure, AI data access governance).",
+                tags: ["enable", "interview"],
+                helper:
+                  "Tie each use case to regional buyer pain, key personas, and 1–2 proof points you can speak to."
+              },
+              {
+                id: "30_competitive",
+                label:
+                  "Review competitive landscape (e.g., other DSPM/data security platforms) and how Cyera differentiates.",
+                tags: ["enable"],
+                helper:
+                  "Create a quick talking sheet with 3–4 crisp differentiation points."
+              }
+            ]
+          },
+          {
+            title: "Demo & Lab Environment",
+            subtitle: "Get hands-on with the Cyera platform demo.",
+            tasks: [
+              {
+                id: "30_setup_demo",
+                label:
+                  "Set up your demo/lab environment and ensure you can log in, navigate, and access common scenarios.",
+                tags: ["enable"],
+                helper:
+                  "Bookmark views that highlight data discovery, classification, and remediation workflows."
+              },
+              {
+                id: "30_shadow_demos",
+                label:
+                  "Shadow at least 3–5 live demos with different AEs to see styles, objection handling, and storytelling.",
+                tags: ["enable", "interview"],
+                helper:
+                  "Capture a demo script outline: intro, discovery, narrative, and value recap."
+              },
+              {
+                id: "30_first_demo_rep",
+                label:
+                  "Practice and deliver a 10–15 minute internal demo to your manager or mentor.",
+                tags: ["enable"],
+                helper:
+                  "Ask for feedback on technical depth, narrative, and how well you tie features to value."
+              }
+            ]
+          },
+          {
+            title: "Territory, Pipeline & Partners",
+            subtitle: "Understand where to focus and who can help.",
+            tasks: [
+              {
+                id: "30_review_accounts",
+                label:
+                  "Review current territory, key accounts, active opportunities, and recent wins/losses.",
+                tags: ["pipeline"],
+                helper:
+                  "Identify 3–5 high-potential accounts for early involvement and value-add."
+              },
+              {
+                id: "30_channel_inventory",
+                label:
+                  "Create an inventory of active channel partners (VARs, MSPs, GSIs) mapped to your territory.",
+                tags: ["partner"],
+                helper:
+                  "Highlight partners where you already have relationships you can re-engage."
+              },
+              {
+                id: "30_partner_intros",
+                label:
+                  "Ask Channel/Alliances team and AEs for introductions to top partners supporting your patch.",
+                tags: ["partner", "rel"],
+                helper:
+                  "Align on how Cyera wants partners enabled and involved in deals."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: "60",
+        label: "Day 31–60",
+        title: "Day 31–60 · Execute & Co‑Own",
+        range: "Focus: Co-own opportunities, deliver demos, and activate the partner ecosystem.",
+        goal:
+          "Move from learning to co-owning technical motions with AEs and partners.",
+        metrics: [
+          "Co‑led ≥3 customer demos end‑to‑end",
+          "Owned technical discovery in 2–3 opportunities",
+          "Engaged partners on ≥2 in‑flight deals",
+          "Built 1–2 tailored demo scenarios"
+        ],
+        categories: [
+          {
+            title: "Deeper AE & SE Collaboration",
+            subtitle: "Become your AEs’ preferred technical partner.",
+            tasks: [
+              {
+                id: "60_ae_cadence",
+                label:
+                  "Set a weekly cadence with each core AE to review pipeline, next steps, and where you can drive technical impact.",
+                tags: ["rel", "pipeline"],
+                helper:
+                  "Come prepared with suggestions (POV-lite, workshops, ROI angles) rather than only taking requests."
+              },
+              {
+                id: "60_internal_deal_reviews",
+                label:
+                  "Participate in internal deal reviews and QBRs to understand how deals are inspected and forecasted.",
+                tags: ["pipeline"],
+                helper:
+                  "Listen for the technical ‘go/no-go’ criteria leaders care about and mirror that in your plans."
+              },
+              {
+                id: "60_feedback_loop",
+                label:
+                  "Establish a feedback loop with AEs on your demos and technical engagement.",
+                tags: ["rel"],
+                helper:
+                  "Ask what’s working, what to adjust, and how you can better align with their selling style."
+              }
+            ]
+          },
+          {
+            title: "Demo Excellence & POV Prep",
+            subtitle: "Confidently run customer-facing demos and prepare for POVs.",
+            tasks: [
+              {
+                id: "60_lead_demos",
+                label:
+                  "Own majority of at least 3 customer demos (discovery recap, demo flow, value summary).",
+                tags: ["enable", "pipeline"],
+                helper:
+                  "Use talk tracks that map directly to Cyera value pillars and the customer’s stated risks."
+              },
+              {
+                id: "60_tailored_demo",
+                label:
+                  "Design 1–2 tailored demo narratives for your vertical or segment (e.g., regulated industries, cloud‑native SaaS).",
+                tags: ["enable"],
+                helper:
+                  "Swap generic examples for scenarios that mirror your territory’s reality."
+              },
+              {
+                id: "60_pov_framework",
+                label:
+                  "Learn and document the POV/POC framework: success criteria, evaluation steps, and required stakeholders.",
+                tags: ["enable", "pipeline"],
+                helper:
+                  "Be ready to suggest a structured POV when opportunities hit the right stage/size."
+              }
+            ]
+          },
+          {
+            title: "Channel & Ecosystem Engagement",
+            subtitle: "Leverage partners to amplify reach and trust.",
+            tasks: [
+              {
+                id: "60_partner_1_1s",
+                label:
+                  "Schedule 1:1s with top partners in your territory to align on joint target accounts and messaging.",
+                tags: ["partner", "rel"],
+                helper:
+                  "Share how you like to work in deals and what ‘good’ looks like for Cyera–partner collaboration."
+              },
+              {
+                id: "60_enable_partners",
+                label:
+                  "Support or deliver a partner enablement session on Cyera’s key use cases and demo highlights.",
+                tags: ["partner", "enable"],
+                helper:
+                  "Provide a simple battlecard and 2–3 ‘when to bring Cyera in’ triggers."
+              },
+              {
+                id: "60_partner_opps",
+                label:
+                  "Identify and progress at least 2 opportunities where partners are actively involved.",
+                tags: ["partner", "pipeline"],
+                helper:
+                  "Help partners position Cyera correctly in the broader security stack."
+              }
+            ]
+          },
+          {
+            title: "Personal Development & Feedback",
+            subtitle: "Sharpen your SE craft with deliberate practice.",
+            tasks: [
+              {
+                id: "60_record_review",
+                label:
+                  "Record and review at least 2 of your own demos or discovery calls with your mentor.",
+                tags: ["enable"],
+                helper:
+                  "Specifically look at questioning, handling objections, and how clearly you land value."
+              },
+              {
+                id: "60_skill_gap_plan",
+                label:
+                  "Create a small skills plan (e.g., whiteboarding, executive storytelling, or deeper cloud security).",
+                tags: ["enable", "interview"],
+                helper:
+                  "Share it with your manager and align it with regional goals and target accounts."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: "90",
+        label: "Day 61–90",
+        title: "Day 61–90 · Own & Optimize",
+        range: "Focus: Own technical cycles, specialize, and contribute back to the team.",
+        goal:
+          "Be a fully ramped SE: owning technical cycles, driving POVs, and improving the motion for the team.",
+        metrics: [
+          "Own full technical cycle for several mid‑tier opportunities",
+          "Lead or co‑lead at least 1–2 POVs to successful outcome",
+          "Become go‑to for 1–2 product / use‑case areas",
+          "Contribute at least one reusable asset or improvement"
+        ],
+        categories: [
+          {
+            title: "Owning the Technical Sales Cycle",
+            subtitle: "From discovery through technical win.",
+            tasks: [
+              {
+                id: "90_own_cycle",
+                label:
+                  "Fully own the technical workstream for several mid‑segment opportunities (discovery, demo, POV, technical close).",
+                tags: ["pipeline"],
+                helper:
+                  "Run structured technical next steps and keep stakeholders aligned on risks and outcomes."
+              },
+              {
+                id: "90_exec_conversations",
+                label:
+                  "Confidently handle executive‑level conversations on risk, compliance, and ROI.",
+                tags: ["enable"],
+                helper:
+                  "Prepare 2–3 concise stories that tie Cyera to board‑level priorities (data risk, AI, cloud)."
+              },
+              {
+                id: "90_ref_stories",
+                label:
+                  "Develop 2–3 reference stories (anonymized if needed) that you can use in new customer conversations.",
+                tags: ["enable", "interview"],
+                helper:
+                  "Include problem, approach, Cyera capabilities used, and measurable outcome."
+              }
+            ]
+          },
+          {
+            title: "POVs & Technical Validation",
+            subtitle: "Prove value in customer environments.",
+            tasks: [
+              {
+                id: "90_lead_pov",
+                label:
+                  "Lead or co‑lead at least 1–2 POVs, from scoping to exit review.",
+                tags: ["pipeline", "enable"],
+                helper:
+                  "Ensure clear success criteria and agreed remediation/value metrics up front."
+              },
+              {
+                id: "90_pov_template",
+                label:
+                  "Refine or create a lightweight POV checklist/template for your region or segment.",
+                tags: ["enable"],
+                helper:
+                  "Share with your SE team to shorten time from POV kickoff to technical win."
+              },
+              {
+                id: "90_pov_retros",
+                label:
+                  "Run short retros on completed POVs with AEs and partners.",
+                tags: ["rel"],
+                helper:
+                  "Capture what worked, what didn’t, and update your playbook accordingly."
+              }
+            ]
+          },
+          {
+            title: "Channel & Ecosystem Scale",
+            subtitle: "Turn channel from helpful to high leverage.",
+            tasks: [
+              {
+                id: "90_partner_champs",
+                label:
+                  "Identify and nurture technical champions inside 1–2 key partners.",
+                tags: ["partner", "rel"],
+                helper:
+                  "Give them early insight into new releases and help them craft Cyera‑aligned plays."
+              },
+              {
+                id: "90_joint_plays",
+                label:
+                  "Build a simple joint‑account or joint‑play plan with at least one strategic partner.",
+                tags: ["partner", "pipeline"],
+                helper:
+                  "Target accounts where partner relationships + Cyera’s differentiation are strongest."
+              }
+            ]
+          },
+          {
+            title: "Team Contribution & Long‑Term Plan",
+            subtitle: "Give back and set your next 6–12 months up for success.",
+            tasks: [
+              {
+                id: "90_asset_contribution",
+                label:
+                  "Create or improve at least one reusable asset (demo flow, slide, battlecard, ROI snippet) and share with the team.",
+                tags: ["enable"],
+                helper:
+                  "Position it as ‘here’s something I wish I had in my first 60 days.’"
+              },
+              {
+                id: "90_manager_checkin",
+                label:
+                  "Run a 90‑day review with your manager to align on impact so far and a 6–12 month growth plan.",
+                tags: ["rel", "interview"],
+                helper:
+                  "Discuss where you want to specialize (verticals, features, GTM motions)."
+              },
+              {
+                id: "90_personal_brand",
+                label:
+                  "Define how you want to be known as an SE at Cyera (e.g., POV guru, AI data risk expert, partner‑driven).",
+                tags: ["enable"],
+                helper:
+                  "Align your development goals and projects around that brand."
+              }
+            ]
+          }
+        ]
+      }
+    ];
+
+    const phaseListEl = document.getElementById("phaseList");
+    const columnsEl = document.getElementById("columns");
+    const phaseTitleEl = document.getElementById("phaseTitle");
+    const phaseRangeEl = document.getElementById("phaseRange");
+    const progressBarEl = document.getElementById("progressBar");
+    const progressMetaEl = document.getElementById("progressMeta");
+    const progressBadgesEl = document.getElementById("progressBadges");
+    const resetEl = document.getElementById("resetPlan");
+    const interviewToggleEl = document.getElementById("interviewToggle");
+    const layoutSwitchEl = document.getElementById("layoutSwitch");
+
+    const STORAGE_KEY = "cyera_se_30_60_90";
+    let state = {
+      checked: new Set(),
+      interviewMode: false,
+      layout: "phase",
+      activePhaseId: "30"
+    };
+
+    function loadState() {
+      try {
+        const raw = window.localStorage.getItem(STORAGE_KEY);
+        if (!raw) return;
+        const parsed = JSON.parse(raw);
+        if (parsed.checked) state.checked = new Set(parsed.checked);
+        if (parsed.interviewMode != null) state.interviewMode = parsed.interviewMode;
+        if (parsed.layout) state.layout = parsed.layout;
+        if (parsed.activePhaseId) state.activePhaseId = parsed.activePhaseId;
+      } catch (e) {
+        console.warn("Unable to load stored state", e);
+      }
+    }
+
+    function saveState() {
+      const toSave = {
+        checked: Array.from(state.checked),
+        interviewMode: state.interviewMode,
+        layout: state.layout,
+        activePhaseId: state.activePhaseId
+      };
+      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(toSave));
+    }
+
+    function resetState() {
+      state.checked = new Set();
+      saveState();
+      render();
+    }
+
+    function countTasksForPhase(phase) {
+      let total = 0;
+      phase.categories.forEach(cat => {
+        total += cat.tasks.length;
+      });
+      return total;
+    }
+
+    function countCompletedForPhase(phase) {
+      let completed = 0;
+      phase.categories.forEach(cat => {
+        cat.tasks.forEach(t => {
+          if (state.checked.has(t.id)) completed++;
+        });
+      });
+      return completed;
+    }
+
+    function renderPhaseList() {
+      phaseListEl.innerHTML = "";
+      plan.forEach(p => {
+        const total = countTasksForPhase(p);
+        const done = countCompletedForPhase(p);
+        const pct = total ? Math.round((done / total) * 100) : 0;
+
+        const pill = document.createElement("button");
+        pill.type = "button";
+        pill.className =
+          "phase-pill" + (p.id === state.activePhaseId || state.layout === "all" ? " active" : "");
+        pill.dataset.phaseId = p.id;
+
+        pill.innerHTML = `
+          <div class="phase-pill-title">
+            <span>${p.label}</span>
+            <span class="days">${pct}%</span>
+          </div>
+          <div class="phase-pill-subtitle">${p.goal}</div>
+          <div class="phase-pill-metric">
+            <span class="${pct === 0 ? "empty" : ""}">${done}/${total}</span> tasks
+          </div>
+        `;
+
+        pill.addEventListener("click", () => {
+          state.activePhaseId = p.id;
+          state.layout = "phase";
+          saveState();
+          render();
+        });
+
+        phaseListEl.appendChild(pill);
+      });
+    }
+
+    function renderProgress(phase) {
+      const total = countTasksForPhase(phase);
+      const done = countCompletedForPhase(phase);
+      const pct = total ? Math.round((done / total) * 100) : 0;
+      progressBarEl.style.width = pct + "%";
+      progressMetaEl.textContent = `${done} of ${total} tasks complete`;
+      progressBadgesEl.innerHTML = "";
+
+      const relCount = [];
+      const partnerCount = [];
+      phase.categories.forEach(cat =>
+        cat.tasks.forEach(t => {
+          if (t.tags && t.tags.includes("rel") && state.checked.has(t.id)) relCount.push(t.id);
+          if (t.tags && t.tags.includes("partner") && state.checked.has(t.id)) partnerCount.push(t.id);
+        })
+      );
+      const relBadge = document.createElement("div");
+      relBadge.className = "progress-badge";
+      relBadge.innerHTML = `Relationships: <span>${relCount.length}</span>`;
+      const partnerBadge = document.createElement("div");
+      partnerBadge.className = "progress-badge";
+      partnerBadge.innerHTML = `Channel: <span>${partnerCount.length}</span>`;
+      const enableBadge = document.createElement("div");
+      enableBadge.className = "progress-badge";
+      enableBadge.innerHTML = `Enablement: <span>${pct}%</span>`;
+
+      progressBadgesEl.appendChild(relBadge);
+      progressBadgesEl.appendChild(partnerBadge);
+      progressBadgesEl.appendChild(enableBadge);
+    }
+
+    function renderColumns(phasesToRender) {
+      columnsEl.innerHTML = "";
+      phasesToRender.forEach(phase => {
+        phase.categories.forEach(cat => {
+          const card = document.createElement("article");
+          card.className = "column-card";
+
+          const header = document.createElement("div");
+          header.className = "column-header";
+          header.innerHTML = `
+            <div>
+              <div class="column-title">${cat.title}</div>
+              <div class="column-subtitle">${cat.subtitle}</div>
+            </div>
+            <div style="font-size:12px; color: var(--text-muted);">
+              ${phase.label}
+            </div>
+          `;
+          card.appendChild(header);
+
+          cat.tasks.forEach(task => {
+            const taskRow = document.createElement("div");
+            taskRow.className = "task";
+
+            const checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.id = task.id;
+            checkbox.checked = state.checked.has(task.id);
+            checkbox.disabled = state.interviewMode;
+            checkbox.addEventListener("change", () => {
+              if (checkbox.checked) state.checked.add(task.id);
+              else state.checked.delete(task.id);
+              saveState();
+              render();
+            });
+
+            const label = document.createElement("label");
+            label.className = "task-label";
+            label.htmlFor = task.id;
+
+            let tagsHtml = "";
+            if (task.tags && task.tags.length) {
+              tagsHtml =
+                task.tags
+                  .map(tag => {
+                    if (tag === "rel") return '<span class="tag rel">Relationships</span>';
+                    if (tag === "enable") return '<span class="tag enable">Enablement</span>';
+                    if (tag === "pipeline") return '<span class="tag pipeline">Pipeline</span>';
+                    if (tag === "partner") return '<span class="tag partner">Channel</span>';
+                    if (tag === "interview") return '<span class="tag interview">Exec talking point</span>';
+                    return "";
+                  })
+                  .join(" ") || "";
+            }
+
+            label.innerHTML = `
+              ${task.label}
+              ${tagsHtml}
+              ${
+                task.helper
+                  ? `<small>${task.helper}</small>`
+                  : ""
+              }
+            `;
+
+            if (state.interviewMode) {
+              taskRow.appendChild(label);
+            } else {
+              taskRow.appendChild(checkbox);
+              taskRow.appendChild(label);
+            }
+
+            card.appendChild(taskRow);
+          });
+
+          columnsEl.appendChild(card);
+        });
+      });
+    }
+
+    function renderHeader(phase) {
+      phaseTitleEl.textContent = phase.title;
+      phaseRangeEl.innerHTML = phase.range.replace(
+        "Focus:",
+        'Focus: <strong>'
+      ).replace(/$/, "</strong>");
+    }
+
+    function applyToggles() {
+      if (state.interviewMode) {
+        interviewToggleEl.classList.add("on");
+      } else {
+        interviewToggleEl.classList.remove("on");
+      }
+
+      Array.from(layoutSwitchEl.querySelectorAll("button")).forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.layout === state.layout);
+      });
+
+      Array.from(phaseListEl.querySelectorAll(".phase-pill")).forEach(pill => {
+        const phaseId = pill.dataset.phaseId;
+        const active = state.layout === "all" || phaseId === state.activePhaseId;
+        pill.classList.toggle("active", active);
+      });
+    }
+
+    function render() {
+      const activePhase = plan.find(p => p.id === state.activePhaseId) || plan[0];
+      renderPhaseList();
+      if (state.layout === "phase") {
+        renderHeader(activePhase);
+        renderProgress(activePhase);
+        renderColumns([activePhase]);
+      } else {
+        renderHeader({
+          title: "All 90 Days · End‑to‑End Plan Overview",
+          range:
+            "Focus: Showing a structured ramp from onboarding to full regional impact."
+        });
+        renderProgress(activePhase);
+        renderColumns(plan);
+      }
+      applyToggles();
+    }
+
+    resetEl.addEventListener("click", () => {
+      if (confirm("Clear all saved progress for this plan?")) {
+        resetState();
+      }
+    });
+
+    interviewToggleEl.addEventListener("click", () => {
+      state.interviewMode = !state.interviewMode;
+      saveState();
+      render();
+    });
+
+    layoutSwitchEl.addEventListener("click", evt => {
+      const btn = evt.target.closest("button[data-layout]");
+      if (!btn) return;
+      state.layout = btn.dataset.layout;
+      saveState();
+      render();
+    });
+
+    loadState();
+    render();
+  </script>
+</body>
+</html>
